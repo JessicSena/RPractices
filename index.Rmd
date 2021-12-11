@@ -1,6 +1,6 @@
 ---
 title: "Meu Relatório"
-author: "Jessica Sena (mais ou menos, quase nada...)"
+author: "Jessica Sena"
 date: "`r Sys.Date()`"
 output_dir: "."
 output:
