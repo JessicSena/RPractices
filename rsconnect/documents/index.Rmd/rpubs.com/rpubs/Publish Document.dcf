@@ -4,8 +4,8 @@ username:
 account: rpubs
 server: rpubs.com
 hostUrl: rpubs.com
-appId: https://api.rpubs.com/api/v1/document/846329/10209bc4f4584b37b4085a4c04cdf1f2
-bundleId: https://api.rpubs.com/api/v1/document/846329/10209bc4f4584b37b4085a4c04cdf1f2
-url: http://rpubs.com/leite/846329
-when: 1639232748.06888
-lastSyncTime: 1639232748.06888
+appId: https://api.rpubs.com/api/v1/document/846364/1f7becf7271d46069e60bb59645a42b0
+bundleId: https://api.rpubs.com/api/v1/document/846364/1f7becf7271d46069e60bb59645a42b0
+url: http://rpubs.com/publish/claim/846364/d6e7de5929974b20aedc19f2f6200dda
+when: 1639232972.6805
+lastSyncTime: 1639232972.6805
