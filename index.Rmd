@@ -1,5 +1,5 @@
 ---
-title: "Meu Relatório"
+title: "Projeto"
 author: "Jessica Sena (mais ou menos, quase nada...)"
 date: "`r Sys.Date()`"
 output_dir: "."
@@ -9,43 +9,39 @@ output:
     highlight: github
 ---
 
-## A New Output Format
+## Relatório
 
-> Minha frase importante
+> Projeto de conclusão
 
-Lista:
-
-1. Elemento 1
-1. Elemento 2
-1. Elemento 3
 
 **Negrito**  *itálico* `html`
 
 ```{r dados}
 library(tidyverse)
 ## Leitura dos dados
-survey <- read_csv("dados/kaggle_survey_2021_responses.csv", 
+survey <- read_csv("Base/br-capes-colsucup-prog-2019-2020-11-30.csv",  
                    locale = locale())
 
 ## Separação da primeira linha com a descr. da variável
-descricao_survey <- survey %>% 
-  slice(n = 1)
+#descricao_survey <- survey %>% 
+#  slice(n = 1)
+#print (descricao_survey)
 
 # Observações da base
 survey_limpo <- survey %>% 
-  slice(n = 2:n()) # n() total de linhas na base
+  slice(n = 1:n()) # n() total de linhas na base
 ```
 
 
-## Descrição da variável Q2: Gênero
+## Descrição da variável: Área de atuação
 
 ### Tabela
 
 ```{r, echo=TRUE}
-tabela_genero <- arrange(count(survey_limpo, Q2), -n)
-#survey_limpo %>% count(Q2) %>% arrange(-n) %>% kable()
+tabela_area <- arrange(count(survey_limpo, NM_GRANDE_AREA_CONHECIMENTO), -n)
+#survey_limpo %>% count(NM_GRANDE_AREA_CONHECIMENTO) %>% arrange(-n) %>% kable()
 
-knitr::kable(tabela_genero)
+knitr::kable(tabela_area)
 ```
 
 ### Gráfico de Barras
@@ -53,21 +49,17 @@ knitr::kable(tabela_genero)
 Meu lindo gráfico de barras a seguir
 ```{r, echo=TRUE, eval=TRUE}
 survey_limpo %>% 
-  count(Q2) %>% 
+  count(NM_GRANDE_AREA_CONHECIMENTO) %>% 
   ggplot() +
-    geom_bar(aes(x = reorder(Q2, n), 
-                 y = n, fill = Q2) , 
+    geom_bar(aes(x = reorder(NM_GRANDE_AREA_CONHECIMENTO, n), 
+                 y = n, fill = NM_GRANDE_AREA_CONHECIMENTO) , 
              stat = "identity", show.legend = FALSE
              ) +
-  coord_flip() + ylab("Total de Ocorrências") + xlab("Gênero") +
-  labs(fill = "Gênero")
+  coord_flip() + ylab("Quantidade de faculdades") + xlab("STATUS JURIDICO") +
+  labs(fill = "Status Jurídico")
 ```
 
 
 
 
-## Stay Tuned
 
-Please visit the [development page](https://github.com/yixuan/prettydoc/) of the 
-`prettydoc` package for latest updates and news. Comments, bug reports and
-pull requests are always welcome.
